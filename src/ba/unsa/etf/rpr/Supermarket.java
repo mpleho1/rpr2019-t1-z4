@@ -1,17 +1,17 @@
 package ba.unsa.etf.rpr;
 
 public class Supermarket {
-    private Artikl[] niz = new Artikl[1000];
+    private Artikl[] artikli = new Artikl[1000];
     private int brojac=0;
     public void dodajArtikl( Artikl artikal){
-        niz[brojac] = artikal;
+        artikli[brojac] = artikal;
         brojac++;
     }
 
 
 
     public Artikl[] getArtikli(){
-        return niz;
+        return artikli;
     }
 
  /*   public Artikl[] izbaciArtiklSaKodom (String koda){
@@ -28,11 +28,10 @@ public class Supermarket {
     }*/
  public Artikl izbaciArtiklSaKodom(String kod){
      for(int i = 0; i < brojac; i++){
-         //int pom = Integer.parseInt(artikli[i].getKod());
-         if(kod.equals(niz[i].getKod())){
-             Artikl vrati = niz[i];
-             niz[i] = null;
-             System.arraycopy(niz, i+1, niz , i, brojac-i);
+         int pom = Integer.parseInt(artikli[i].getKod());
+         if(pom == Integer.parseInt(kod)){
+             Artikl vrati = artikli[i];
+             System.arraycopy(artikli, i+1, artikli , i, brojac-i);
              brojac = brojac - 1;
              return vrati;
          }

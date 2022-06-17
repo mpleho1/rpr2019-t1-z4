@@ -35,11 +35,12 @@ public class Korpa {
     public int dajUkupnuCijenuArtikala(){
         int suma =0 ;
         for ( int i=0; i<brojac; i++){
-            suma=suma+artikli[brojac].getCijena();
+            suma=suma+artikli[i].getCijena();
         }
         return suma;
     }
     public boolean dodajArtikl( Artikl artikl){
+       if(brojac>=50) return false;
         artikli[brojac] = artikl;
             brojac++;
             return true;
